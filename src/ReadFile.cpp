@@ -19,9 +19,15 @@ void addPair(std::string& Name , std::string& Id , std::unordered_map<std::strin
 
 void LookUpName(std::string& Name, std::unordered_map<std::string , std::string>& MapRef){
 
-    std::string Id = MapRef[Name];
-    std::cout << Id;
+    
+    std::string_view Id = (MapRef)[Name];
+    if(Id == "0")
+    {
+        std::cout<<"Not Found";
+    }
+    std::cout<<Id;
     return;
+    
 }
 
 
