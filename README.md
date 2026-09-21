@@ -3,5 +3,4 @@ Make a large secure database of usernames and passwords with the ability to quer
 Now works ability to search usernames and get a password
 Also ability to add new entries
 
-Put this into compile
-g++ src/main.cpp src/ReadFile.cpp src/"Write&Read.cpp" -I include -o build/main.exe
+Terminal Command to compile g++ main.cpp ReadFile.cpp "Write&Read.cpp" -o main.exe
