@@ -60,7 +60,7 @@ void Load(std::string& File_Name , std::unordered_map<std::string , std::string>
 
 
 void GenerateData(std::string& File_Name)
-{
+{    
     std::ofstream file(File_Name , std::ios::app);
 
     if(file.is_open())
@@ -81,7 +81,23 @@ void GenerateData(std::string& File_Name)
     return;
 }
 
-void DeleteData()
+void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
 {
+    std::ifstream New_File;
+    std::ofstream file (File_Name);
 
+    std::string readFile;
+    std::string id;
+
+    file.open(File_Name , std::ios::app);
+
+    New_File.open("NewFile.txt" , std::ios::out);
+    
+
+    if (New_File.is_open()) 
+    {
+        while (getline(New_File, readFile)) {
+            //std::getline(file , readFile);
+        }
+    }
 }
