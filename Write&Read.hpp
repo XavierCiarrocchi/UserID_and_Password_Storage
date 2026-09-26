@@ -11,6 +11,6 @@ extern std::ofstream outof_file;
 
 //function defs
 
-void Save(std::ofstream &file, std::unordered_map<std::string , std::string>& map);
-
-void Load(std::ifstream &file , std::unordered_map<std::string , std::string>& map);
+void GenerateData(std::string& File_Name);
+void Load(std::string& File_Name , std::unordered_map<std::string , std::string>& map);
+void Save(std::string& File_Name, std::unordered_map<std::string , std::string>& map);

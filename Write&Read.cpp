@@ -1,6 +1,5 @@
-
+#include "ReadFile.hpp"
 #include "Write&Read.hpp"
-const std::string FILE_NAME = "data.txt";
 
 std::string Name;
 std::string Id;
@@ -8,18 +7,20 @@ std::string Id;
 std::string Read_User;
 std::string Read_Id;
 
-void Save(std::ofstream &file, 
-    std::unordered_map<std::string , std::string>& map)
-{
+void Save(std::string& File_Name, std::unordered_map<std::string , std::string>& map){
     
-    if(!file.is_open())
-    {
+    std::ofstream file (File_Name , std::ios::app);
+
+    if(!(file.is_open())){
+
         std::cerr<<"error";
         return;
     }
+
     std::cout<<"success";
-    for(const auto& pair : map)
-    {
+
+    for(const auto& pair : map){
+
         file << pair.first << "\n";
         file << pair.second << "\n";
     }
@@ -28,30 +29,75 @@ void Save(std::ofstream &file,
     return;
 }
 
-void Load(std::ifstream &file , 
-    std::unordered_map<std::string , std::string>& map)
-{
-    std::string Name;
-    std::string Id;
-    file.open("data.txt" , std::ios::app);
-    if(!file.is_open())
-    {
-        std::cerr << "error";
+void Load(std::string& File_Name , std::unordered_map<std::string , std::string>& map){
+
+    std::string Read_User{};
+    std::string Read_Id {};
+
+    std::ifstream file (File_Name, std::ios::app);
+
+
+    if(file.is_open()){
+
+        std::cout << "Success";
+        while(std::getline(file,Read_User)){
+
+            std::getline(file, Read_Id);
+
+            (map)[Read_User] = Read_Id;
+        }
+    }
+
+    else{
+        std::cerr << "Error";
         return;
     }
 
+    file.close();
+
+    return;
+}
+
+
+void GenerateData(std::string& File_Name)
+{    
+    std::ofstream file(File_Name , std::ios::app);
+
     if(file.is_open())
     {
-        std::cout << "Success";
-        //allegedly eof runs it to end of file not sure if and how it works
-        while(getline(file,Read_User))
-        {
-            // good chance this code crashes must be tested publish branch compile this and main.cpp to test loading and saving
-            
-            std::getline(file,Read_User);
-            std::getline(file, Read_Id);
-            
-            (map)[Read_User] = Read_Id;
+        for(size_t i = 0 ; i < 10000 ; i+=2){
+
+        std::string Id = std::to_string(i);
+        std::string Password = std::to_string(i/2);
+        addPair(Id , Password , KEYVALUEPAIR_STORAGE);
+        }
+    }
+    else
+    {
+        std::cerr<<"Error";
+        return;
+    }
+    file.close();
+    return;
+}
+
+void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
+{
+    std::ifstream New_File;
+    std::ofstream file (File_Name);
+
+    std::string readFile;
+    std::string id;
+
+    file.open(File_Name , std::ios::app);
+
+    New_File.open("NewFile.txt" , std::ios::out);
+    
+
+    if (New_File.is_open()) 
+    {
+        while (getline(New_File, readFile)) {
+            //std::getline(file , readFile);
         }
     }
 }
