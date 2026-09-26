@@ -65,7 +65,7 @@ void GenerateData(std::string& File_Name)
 
     if(file.is_open())
     {
-        for(size_t i = 0 ; i < 10000 ; i++){
+        for(size_t i = 0 ; i < 10000 ; i+=2){
 
         std::string Id = std::to_string(i);
         std::string Password = std::to_string(i/2);
@@ -79,4 +79,9 @@ void GenerateData(std::string& File_Name)
     }
     file.close();
     return;
+}
+
+void DeleteData()
+{
+
 }
