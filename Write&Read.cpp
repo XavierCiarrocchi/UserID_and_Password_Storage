@@ -7,9 +7,11 @@ std::string Id;
 std::string Read_User;
 std::string Read_Id;
 
-void Save(std::ofstream &file, std::unordered_map<std::string , std::string>& map){
+void Save(std::string& File_Name, std::unordered_map<std::string , std::string>& map){
     
-    if(!file.is_open()){
+    std::ofstream file (File_Name , std::ios::app);
+
+    if(!(file.is_open())){
 
         std::cerr<<"error";
         return;
@@ -27,41 +29,54 @@ void Save(std::ofstream &file, std::unordered_map<std::string , std::string>& ma
     return;
 }
 
-void Load(std::ifstream &file , std::unordered_map<std::string , std::string>& map){
+void Load(std::string& File_Name , std::unordered_map<std::string , std::string>& map){
 
-    std::string Name;
-    std::string Id;
-    file.open("data.txt" , std::ios::app);
-    if(!file.is_open())
-    {
-        std::cerr << "error";
-        return;
-    }
+    std::string Read_User{};
+    std::string Read_Id {};
+
+    std::ifstream file (File_Name, std::ios::app);
+
 
     if(file.is_open()){
 
         std::cout << "Success";
-        while(getline(file,Read_User)){
+        while(std::getline(file,Read_User)){
 
             std::getline(file, Read_Id);
 
             (map)[Read_User] = Read_Id;
         }
     }
+
+    else{
+        std::cerr << "Error";
+        return;
+    }
+
+    file.close();
+
+    return;
 }
 
 
-void GenerateData()
+void GenerateData(std::string& File_Name)
 {
-    
-    for(size_t i = 0 ; i < 10000 ; i++){
+    std::ofstream file(File_Name , std::ios::app);
+
+    if(file.is_open())
+    {
+        for(size_t i = 0 ; i < 10000 ; i++){
 
         std::string Id = std::to_string(i);
-
         std::string Password = std::to_string(i/2);
-        
         addPair(Id , Password , KEYVALUEPAIR_STORAGE);
+        }
     }
-
+    else
+    {
+        std::cerr<<"Error";
+        return;
+    }
+    file.close();
     return;
 }
