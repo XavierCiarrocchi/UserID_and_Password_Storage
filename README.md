@@ -5,5 +5,21 @@ Also ability to add new entries
 
 Terminal Command to compile g++ main.cpp ReadFile.cpp WriteRead.cpp -o main.exe
 
+## How to compile (CMake, recommended)
 
-New Cmake Additions Need to be tested
+Prerequisites: CMake 3.20+, Ninja, and MinGW g++ (`gcc`/`g++` on PATH).
+
+```powershell
+# from the project root
+cmake --preset debug        # or: cmake --preset release
+cmake --build --preset debug
+```
+
+The executable is placed in `Builds/MinatureDatabaseEngine.exe`.
+
+Notes:
+- Open a fresh terminal after installing Ninja so it is on your PATH.
+- If you change `CMakeLists.txt` or `CMakePresets.json`, just re-run the
+  build command — Ninja re-configures automatically.
+- Manual compile still works too:
+  `g++ main.cpp ReadFile.cpp WriteRead.cpp -o main.exe`
