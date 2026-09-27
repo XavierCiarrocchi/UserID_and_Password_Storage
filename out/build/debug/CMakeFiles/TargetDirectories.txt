@@ -1,0 +1,3 @@
+C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/MinatureDatabaseEngine.dir
+C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/edit_cache.dir
+C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/rebuild_cache.dir
