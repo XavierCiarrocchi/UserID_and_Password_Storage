@@ -1,13 +1,15 @@
 #pragma once
+
 #include <fstream>
 #include <iostream>
 #include <unordered_map>
 #include <utility>
 #include <string>
 #include <string_view>
-
-
-extern std::unordered_map<std::string , std::string> KEYVALUEPAIR_STORAGE;
+#include <cstdio>
+#include <sstream>
+#include <optional>
+std::unordered_map<std::string , std::string> KEYVALUEPAIR_STORAGE;
 //extern std::ifstream into_file;
 //extern std::ofstream outof_file;
 

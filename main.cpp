@@ -4,7 +4,7 @@
 #include "WriteRead.hpp"
 
 
-std::unordered_map<std::string , std::string> KEYVALUEPAIR_STORAGE {};
+extern std::unordered_map<std::string , std::string> KEYVALUEPAIR_STORAGE {};
 //std::ifstream into_file{"data.txt", std::ios::app};
 //std::ofstream outof_file{"data.txt", std::ios::app};
 //
@@ -12,16 +12,20 @@ std::string File_Name {"data.txt"};
 
 int main (){
 
-    std::string Search_Name{};
-    
-    GenerateData(File_Name);
-    
-    Save(File_Name,KEYVALUEPAIR_STORAGE);
+    std::string Command{};
+    std::string Function{};
+    std::string Target{};
 
-    Load(File_Name,KEYVALUEPAIR_STORAGE);
+    char buf1{};
+    char buf2{};
 
-    std::cout<<"\nEnter Name to search: ";
-    std::cin >> Search_Name;
+    std::cin >> Command;
 
-    LookUpName(Search_Name , KEYVALUEPAIR_STORAGE);
+    std::stringstream ss (Command);
+
+    ss >> Function >> Target;
+
+
+
+
 }

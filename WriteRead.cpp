@@ -11,10 +11,9 @@ void Save(std::string& File_Name, std::unordered_map<std::string , std::string>&
     
     std::ofstream file (File_Name , std::ios::app);
 
-    if(!(file.is_open())){
-
-        std::cerr<<"error";
-        return;
+    if(!(file.is_open()))
+    {
+        throw std::runtime_error("Couldnt Open File");
     }
 
     std::cout<<"success";
@@ -34,7 +33,7 @@ void Load(std::string& File_Name , std::unordered_map<std::string , std::string>
     std::string Read_User{};
     std::string Read_Id {};
 
-    std::ifstream file (File_Name, std::ios::app);
+    std::ifstream file (File_Name, std::ios::in);
 
 
     if(file.is_open()){
@@ -42,17 +41,25 @@ void Load(std::string& File_Name , std::unordered_map<std::string , std::string>
         std::cout << "Success";
         while(std::getline(file,Read_User)){
 
+            if(!(std::getline(file,Read_Id)))
+            {
+                throw std::runtime_error("Incorrect formating of Data");
+            }
+
+            if(Read_Id.empty())
+            {
+                throw std::runtime_error("Empty Password");
+            }
+
             std::getline(file, Read_Id);
 
             (map)[Read_User] = Read_Id;
         }
     }
-
-    else{
-        std::cerr << "Error";
-        return;
+    else
+    {
+        throw std::runtime_error("Couldnt Open File");
     }
-
     file.close();
 
     return;
@@ -83,21 +90,34 @@ void GenerateData(std::string& File_Name)
 
 void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
 {
-    std::ifstream New_File;
-    std::ofstream file (File_Name);
-
-    std::string readFile;
-    std::string id;
-
-    file.open(File_Name , std::ios::app);
-
-    New_File.open("NewFile.txt" , std::ios::out);
-    
-
-    if (New_File.is_open()) 
+    if(KEYVALUEPAIR_STORAGE.empty())
     {
-        while (getline(New_File, readFile)) {
-            //std::getline(file , readFile);
+        Load(File_Name,KEYVALUEPAIR_STORAGE);
+    }
+    
+    std::ifstream Current_File (File_Name);
+
+    if(!(Current_File.is_open()))
+    {
+        throw std::runtime_error("File Didnt open");
+    }
+
+    std::ofstream New_File ("NewFile.txt" , std::ios::out);
+    
+    std::string User{};
+
+    int line_num{1};
+
+    while(std::getline(Current_File,line_num))
+    {
+        if(line_num > LowerBound && line_num < UpperBound)
+        {
+            KEYVALUEPAIR_STORAGE.erase(User);
         }
     }
+    
+    //rename file to data.txt and delete the old file or rename it as a backup
+    Load(New_File , KEYVALUEPAIR_STORAGE);
+
+
 }
