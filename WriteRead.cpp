@@ -90,6 +90,12 @@ void GenerateData(std::string& File_Name)
 
 void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
 {
+
+    std::string temp_name = "data.txt";
+    
+    std::filesystem::path temp_path=temp_name+".txt";
+    std::filesystem::path new_path=File_Name;
+
     if(KEYVALUEPAIR_STORAGE.empty())
     {
         Load(File_Name,KEYVALUEPAIR_STORAGE);
@@ -102,7 +108,7 @@ void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
         throw std::runtime_error("File Didnt open");
     }
 
-    std::ofstream New_File ("NewFile.txt" , std::ios::out);
+    std::ofstream New_File (temp_path , std::ios::out);
     
     std::string User{};
 
@@ -117,7 +123,8 @@ void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
     }
     
     //rename file to data.txt and delete the old file or rename it as a backup
-    Load(New_File , KEYVALUEPAIR_STORAGE);
+
+    Load( , KEYVALUEPAIR_STORAGE);
 
 
 }

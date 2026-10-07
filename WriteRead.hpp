@@ -4,6 +4,7 @@
 #include <string>
 #include <unordered_map>
 #include <utility>
+#include <filesystem>
 
 //external file to aviod copies
 extern std::ifstream into_file;

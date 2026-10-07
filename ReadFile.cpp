@@ -30,7 +30,7 @@ void addPair(std::string& Name , std::string& Id , std::unordered_map<std::strin
 
 //fix overload issue then should work
 //rename to find
-std::optional<std::string> LookUpName(std::string& Name, std::unordered_map<std::string , std::string>& MapRef){
+std::string LookUpName(std::string& Name, std::unordered_map<std::string , std::string>& MapRef){
 
     //ensure only called after Items are loaded into hashmap
     std::string Id = (MapRef)[Name];
@@ -38,7 +38,7 @@ std::optional<std::string> LookUpName(std::string& Name, std::unordered_map<std:
     if(Id == "0")
     {
         std::cout<<"Not Found";
-        return 0;
+        throw std::runtime_error("Illegal Password");
     }
 
     return Id;
