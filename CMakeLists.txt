@@ -14,13 +14,13 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(CompilerWarnings)
 
 add_executable(MinatureDatabaseEngine
-  main.cpp
-  ReadFile.cpp
-  WriteRead.cpp
+  src/main.cpp
+  src/ReadFile.cpp
+  src/WriteRead.cpp
 )
 
 target_include_directories(MinatureDatabaseEngine PRIVATE
-  "${CMAKE_CURRENT_SOURCE_DIR}"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src"
 )
 
 set_project_warnings(MinatureDatabaseEngine)

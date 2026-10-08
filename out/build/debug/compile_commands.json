@@ -1,20 +1,20 @@
 [
 {
   "directory": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\MinatureDatabaseEngine.dir\\main.cpp.obj -c C:\\Users\\xavie\\Desktop\\c++\\MinatureDatabaseEngine\\main.cpp",
-  "file": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/main.cpp",
-  "output": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/MinatureDatabaseEngine.dir/main.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\MinatureDatabaseEngine.dir\\src\\main.cpp.obj -c C:\\Users\\xavie\\Desktop\\c++\\MinatureDatabaseEngine\\src\\main.cpp",
+  "file": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src/main.cpp",
+  "output": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/MinatureDatabaseEngine.dir/src/main.cpp.obj"
 },
 {
   "directory": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\MinatureDatabaseEngine.dir\\ReadFile.cpp.obj -c C:\\Users\\xavie\\Desktop\\c++\\MinatureDatabaseEngine\\ReadFile.cpp",
-  "file": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/ReadFile.cpp",
-  "output": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/MinatureDatabaseEngine.dir/ReadFile.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\MinatureDatabaseEngine.dir\\src\\ReadFile.cpp.obj -c C:\\Users\\xavie\\Desktop\\c++\\MinatureDatabaseEngine\\src\\ReadFile.cpp",
+  "file": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src/ReadFile.cpp",
+  "output": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/MinatureDatabaseEngine.dir/src/ReadFile.cpp.obj"
 },
 {
   "directory": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\MinatureDatabaseEngine.dir\\WriteRead.cpp.obj -c C:\\Users\\xavie\\Desktop\\c++\\MinatureDatabaseEngine\\WriteRead.cpp",
-  "file": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/WriteRead.cpp",
-  "output": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/MinatureDatabaseEngine.dir/WriteRead.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\MinatureDatabaseEngine.dir\\src\\WriteRead.cpp.obj -c C:\\Users\\xavie\\Desktop\\c++\\MinatureDatabaseEngine\\src\\WriteRead.cpp",
+  "file": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src/WriteRead.cpp",
+  "output": "C:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/build/debug/CMakeFiles/MinatureDatabaseEngine.dir/src/WriteRead.cpp.obj"
 }
 ]

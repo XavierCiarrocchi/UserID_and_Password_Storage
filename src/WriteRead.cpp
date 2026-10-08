@@ -92,7 +92,7 @@ void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
 {
 
     std::string temp_name = "data.txt";
-
+    
     std::filesystem::path temp_path=temp_name+".txt";
     std::filesystem::path new_path=File_Name;
 
@@ -124,7 +124,7 @@ void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
     
     //rename file to data.txt and delete the old file or rename it as a backup
 
-    Load(temp_name , KEYVALUEPAIR_STORAGE);
+    Load( , KEYVALUEPAIR_STORAGE);
 
 
 }

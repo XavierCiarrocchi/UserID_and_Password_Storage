@@ -49,31 +49,31 @@ cmake_ninja_workdir = C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/out/bui
 
 build cmake_object_order_depends_target_MinatureDatabaseEngine: phony || .
 
-build CMakeFiles/MinatureDatabaseEngine.dir/main.cpp.obj: CXX_COMPILER__MinatureDatabaseEngine_unscanned_Debug C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/main.cpp || cmake_object_order_depends_target_MinatureDatabaseEngine
+build CMakeFiles/MinatureDatabaseEngine.dir/src/main.cpp.obj: CXX_COMPILER__MinatureDatabaseEngine_unscanned_Debug C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src/main.cpp || cmake_object_order_depends_target_MinatureDatabaseEngine
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\MinatureDatabaseEngine.dir\main.cpp.obj.d
+  DEP_FILE = CMakeFiles\MinatureDatabaseEngine.dir\src\main.cpp.obj.d
   FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic
-  INCLUDES = -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine
+  INCLUDES = -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src
   OBJECT_DIR = CMakeFiles\MinatureDatabaseEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\MinatureDatabaseEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\MinatureDatabaseEngine.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\MinatureDatabaseEngine.dir
 
-build CMakeFiles/MinatureDatabaseEngine.dir/ReadFile.cpp.obj: CXX_COMPILER__MinatureDatabaseEngine_unscanned_Debug C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/ReadFile.cpp || cmake_object_order_depends_target_MinatureDatabaseEngine
+build CMakeFiles/MinatureDatabaseEngine.dir/src/ReadFile.cpp.obj: CXX_COMPILER__MinatureDatabaseEngine_unscanned_Debug C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src/ReadFile.cpp || cmake_object_order_depends_target_MinatureDatabaseEngine
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\MinatureDatabaseEngine.dir\ReadFile.cpp.obj.d
+  DEP_FILE = CMakeFiles\MinatureDatabaseEngine.dir\src\ReadFile.cpp.obj.d
   FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic
-  INCLUDES = -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine
+  INCLUDES = -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src
   OBJECT_DIR = CMakeFiles\MinatureDatabaseEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\MinatureDatabaseEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\MinatureDatabaseEngine.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\MinatureDatabaseEngine.dir
 
-build CMakeFiles/MinatureDatabaseEngine.dir/WriteRead.cpp.obj: CXX_COMPILER__MinatureDatabaseEngine_unscanned_Debug C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/WriteRead.cpp || cmake_object_order_depends_target_MinatureDatabaseEngine
+build CMakeFiles/MinatureDatabaseEngine.dir/src/WriteRead.cpp.obj: CXX_COMPILER__MinatureDatabaseEngine_unscanned_Debug C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src/WriteRead.cpp || cmake_object_order_depends_target_MinatureDatabaseEngine
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\MinatureDatabaseEngine.dir\WriteRead.cpp.obj.d
+  DEP_FILE = CMakeFiles\MinatureDatabaseEngine.dir\src\WriteRead.cpp.obj.d
   FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic
-  INCLUDES = -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine
+  INCLUDES = -IC:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/src
   OBJECT_DIR = CMakeFiles\MinatureDatabaseEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\MinatureDatabaseEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\MinatureDatabaseEngine.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\MinatureDatabaseEngine.dir
 
 
@@ -84,7 +84,7 @@ build CMakeFiles/MinatureDatabaseEngine.dir/WriteRead.cpp.obj: CXX_COMPILER__Min
 #############################################
 # Link the executable C:\Users\xavie\Desktop\c++\MinatureDatabaseEngine\Builds\MinatureDatabaseEngine.exe
 
-build C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/Builds/MinatureDatabaseEngine.exe: CXX_EXECUTABLE_LINKER__MinatureDatabaseEngine_Debug CMakeFiles/MinatureDatabaseEngine.dir/main.cpp.obj CMakeFiles/MinatureDatabaseEngine.dir/ReadFile.cpp.obj CMakeFiles/MinatureDatabaseEngine.dir/WriteRead.cpp.obj
+build C$:/Users/xavie/Desktop/c++/MinatureDatabaseEngine/Builds/MinatureDatabaseEngine.exe: CXX_EXECUTABLE_LINKER__MinatureDatabaseEngine_Debug CMakeFiles/MinatureDatabaseEngine.dir/src/main.cpp.obj CMakeFiles/MinatureDatabaseEngine.dir/src/ReadFile.cpp.obj CMakeFiles/MinatureDatabaseEngine.dir/src/WriteRead.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
