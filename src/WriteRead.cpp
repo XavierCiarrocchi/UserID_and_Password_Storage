@@ -91,40 +91,46 @@ void GenerateData(std::string& File_Name)
 void DeleteData(int LowerBound , int UpperBound, std::string& File_Name)
 {
 
+    assert(UpperBound-LowerBound<0);
+
     std::string temp_name = "data.txt";
     
-    std::filesystem::path temp_path=temp_name+".txt";
+    std::filesystem::path temp_path=temp_name;
     std::filesystem::path new_path=File_Name;
+    std::ofstream New_File (temp_path , std::ios::out);
+    std::string User{};
+    std::error_code ec;
 
+    
     if(KEYVALUEPAIR_STORAGE.empty())
     {
         Load(File_Name,KEYVALUEPAIR_STORAGE);
     }
     
-    std::ifstream Current_File (File_Name);
+    std::ifstream Current_File (File_Name , std::ios::in);
 
     if(!(Current_File.is_open()))
     {
         throw std::runtime_error("File Didnt open");
     }
 
-    std::ofstream New_File (temp_path , std::ios::out);
     
-    std::string User{};
-
-    int line_num{1};
-
-    while(std::getline(Current_File,line_num))
+    for(size_t i=LowerBound; i < UpperBound; i++)
     {
-        if(line_num > LowerBound && line_num < UpperBound)
-        {
-            KEYVALUEPAIR_STORAGE.erase(User);
-        }
+        KEYVALUEPAIR_STORAGE.erase(User);
     }
     
     //rename file to data.txt and delete the old file or rename it as a backup
 
-    Load( , KEYVALUEPAIR_STORAGE);
+    Load(File_Name , KEYVALUEPAIR_STORAGE);
+    
+    std::filesystem::rename(temp_name, new_path, ec);
 
+    if(ec)
+    {
+        throw std::runtime_error("File Didnt Open");
+    }
 
+    Current_File.close();
+    New_File.close();
 }

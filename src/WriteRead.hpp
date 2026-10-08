@@ -5,6 +5,8 @@
 #include <unordered_map>
 #include <utility>
 #include <filesystem>
+#include <system_error>
+#include <cassert>
 
 //external file to aviod copies
 extern std::ifstream into_file;
